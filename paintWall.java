@@ -1,37 +1,31 @@
 package src;
 import java.util.Scanner;
-public class paintWall {
-	   public static void main(String[] args) {
-		   
-		  
-		  
-	      Scanner scnr = new Scanner(System.in);
-	      
-	      int userInt;
-	      double userDouble;
-	      char userChar;
-	      String userString;
-	      int userDoubleInt;
-	      
-	      System.out.println("Enter integer:");
-	      userInt = scnr.nextInt();
-	      
-	      System.out.println("Enter double:");
-	      userDouble = scnr.nextDouble();
-	      
-	      System.out.println("Enter character:");
-	      userChar = scnr.next().charAt(0);
-	      
-	      System.out.println("Enter string:");
-	      userString = scnr.next();
-	      
-	      System.out.println(userInt+" "+userDouble+" "+userChar+" "+userString);
-	      System.out.println(userString+" "+userChar+" "+userDouble+" "+userInt);
-	      
-	      userDoubleInt = (int)userDouble;
-	      System.out.println(userDouble+" cast to an integer is "+userDoubleInt);
-	      
-	      scnr.close();
-	   }
-	}
+import java.lang.Math;     // Note: Needed for math functions in part (3)
 
+public class paintWall {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      double wallHeight;
+      double wallWidth;
+      double wallArea;
+      double paintNeeded;
+      long cansNeeded;
+      
+      System.out.println("Enter wall height (feet):");
+      wallHeight = scnr.nextDouble();
+      
+      System.out.println("Enter wall width (feet):");
+      wallWidth = scnr.nextDouble();                      // FIXME (1): Prompt user to input wall's width
+      
+      // Calculate and output wall area
+      wallArea = wallHeight * wallWidth;                        // FIXME (1): Calculate the wall's area
+      System.out.println("Wall area: "+wallArea+" square feet");     
+      
+      paintNeeded = ((double)wallArea) / ((double)350);
+      System.out.println("Paint needed: "+paintNeeded+" gallons");
+   
+      cansNeeded = java.lang.Math.round(paintNeeded);
+      System.out.println("Cans needed: "+cansNeeded+" can(s)");
+      scnr.close();
+   }
+}
